@@ -9,8 +9,7 @@ while True :
     lcnt =  len(unit)
     for i in range(lcnt):
         coin = outwon // unit[i]
-        if coin > 0: print("%d원권 %d매" %(unit[i], coin))
+        if coin > 0: print("%d원권 %d개" %(unit[i], coin))
         outwon %= unit[i]
-    if outwon > 0: print("1원권 %d개" %outwon)
     print()
 

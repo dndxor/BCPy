@@ -9,7 +9,6 @@ while True :
     for x in unit:
         coin = outwon // x
         outwon %= x
-        if coin > 0: print("%d원권 %d매" %(x, coin))
-    if outwon > 0: print("1원권 %d개" %outwon)
+        if coin > 0: print("%d원권 %d개" %(x, coin))
     print()
 
