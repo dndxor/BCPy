@@ -37,15 +37,8 @@ def prt_puzzle() :
 
 def check_complete() :
     global puzzle, row, col
-    chk_cnt = 0
-    for i in range(row) :
-        for j in range(col) :
-            if puzzle[i][j] == (row*i + j + 1) :
-                chk_cnt += 1
-    if chk_cnt >= (row*col-1) :
-        return 1    #complete
-    else :
-        return 0
+    #완성해야 할 부분
+
 
 def find_zero():
     for i in range(row) :
