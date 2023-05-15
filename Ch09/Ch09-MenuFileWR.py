@@ -8,12 +8,11 @@ menu = {'COFFEE': [['에스프레소', 3.0], ['아메리카노', 3.0], ['카페�
           'JUICE': [['망고', 4.5], ['바나나', 4.5], ['딸기', 4.5], ['키위', 4.5]],
           'SMOOTHIE': [['청귤스무디', 4.5], ['요거트스무디', 4.5]],
           'MILK TEA': [['흑당밀크티', 4.5], ['달고나밀크티', 4.5]]}
-Menu = {}  #파일로부터 만들 메뉴
 
 def write_menu_file(menu):
     fpath = os.getcwd()
     fname = fpath + '\\' + "Menu.txt"
-    fd = open(fname, 'w', encoding='UTF-8')
+    fd = open(fname, 'w')
     for title, mlists in menu.items():
         for mmenu, price in mlists:
             rec = title + '\t' + mmenu + '\t' + str(price) + '\n'
@@ -24,7 +23,7 @@ def read_menu_file():
     global Menu
     fpath = os.getcwd()
     fname = fpath + '\\' + "Menu.txt"
-    fd = open(fname, 'r', encoding='UTF-8')
+    fd = open(fname, 'r')
     mlist = []
     line = fd.readline()    #한 줄만 읽기
     rec = line.split()
@@ -38,12 +37,12 @@ def read_menu_file():
         rec = line.split('\t')
         title, mmenu, price = rec
         if save_title != title:
-            Menu[save_title] = mlist #메뉴 딕셔너리에 추가
+            menu[save_title] = mlist #메뉴 딕셔너리에 추가
             save_title = title
             mlist = []
         mlist.append([mmenu, float(price)])
     if lcnt > 0:
-        Menu[save_title] = mlist  # 마지막 항목 메뉴 딕셔너리에 추가
+        menu[save_title] = mlist  # 마지막 항목 메뉴 딕셔너리에 추가
 
 def prt_menu(menu):    #(출력)전체(소분류) 메뉴
     print("[[ 메뉴 ]]")
@@ -57,6 +56,6 @@ def prt_menu(menu):    #(출력)전체(소분류) 메뉴
 write_menu_file(menu)   #딕셔너리를 파일로 쓰기
 menu = {}               #기존  딕셔너리 삭제
 read_menu_file()        #파일 메뉴를 읽어 딕셔너리로 만들기
-print(Menu)             #새로운 메뉴 딕셔너리 확인
-prt_menu(Menu)          #새로운 메뉴 딕셔너리 출력
+print(menu)             #새로운 메뉴 딕셔너리 확인
+prt_menu(menu)          #새로운 메뉴 딕셔너리 출력
 ######################
