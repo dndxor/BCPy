@@ -1,0 +1,3255 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   예보요약 &gt; 동네예보 &gt; 육상예보 &gt; 특보·예보 &gt; 날씨 &gt; 기상청
+  </title>
+  <link href="https://www.kma.go.kr/iphone-shortcut.png" rel="shortcut icon"/>
+  <link href="https://www.kma.go.kr/iphone-shortcut.png" rel="apple-touch-icon-precomposed"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="/share/css/base.css?ver=20210128" rel="stylesheet" type="text/css"/>
+  <link href="/share/css/common.css?ver=20210128" rel="stylesheet" type="text/css"/>
+  <link href="/share/css/weather-layout.css?ver=20210128" rel="stylesheet" type="text/css"/>
+  <link href="/share/css/component.css?ver=20210128" rel="stylesheet" type="text/css"/>
+  <link href="/share/css/add_2018.css?ver=20210128" rel="stylesheet" type="text/css"/>
+  <link href="/share/css/forecast-warning.css?ver=20210128" rel="stylesheet" type="text/css"/>
+  <script src="/share/js/jquery-1.7.1.min.js">
+  </script>
+  <script src="/share/js/weather-common.js?ver=20210128">
+  </script>
+  <link href="/share/css/warninglayer.css?ver=20210128" rel="stylesheet" type="text/css"/>
+  <!--[if gte IE 7]><link rel="stylesheet" type="text/css" href="/share/css/ie7.css" /><![endif]-->
+  <meta content="기상청 " name="title"/>
+  <meta content="기상청" name="author"/>
+  <meta content="날씨, 기상청" name="keywords"/>
+  <meta content="기상청 날씨누리입니다." name="description"/>
+  <meta content="forecast-warning.css" name="content-css"/>
+  <meta content="../../images/weather/forecast/h4_1_1.gif" name="parent-image"/>
+  <meta content="육상예보" name="parent-alt"/>
+  <meta content="../../images/weather/forecast/h5_1_1.gif" name="title-image"/>
+  <meta content="동네예보" name="title-alt"/>
+  <meta content="/HELP/html/help_fct020.jsp" name="help-url"/>
+  <meta content="/HELP/html/help_fct008.jsp" name="fct-glossary"/>
+  <script type="text/javascript">
+   $(document).ready(function() { 
+
+            $(".summary_search form").css("width","257px");
+
+            $(".announcementtime img").css("padding-right","2px");
+
+        });
+  </script>
+  <style type="text/css">
+   .table_announcementtime tbody td .table_basic_2 th{text-align:center;border:1px solid #d0d0d0;}
+
+.table_announcementtime tbody td .table_basic_2 td{text-align:center;padding: 9px 5px 4px 5px;}
+
+.txt_center{text-align:center;}
+
+span.depth_1 {display: inline-block;margin-top: 1em;}
+
+span.depth_2 {display: inline-block;margin-left: 3em;text-indent: -1em;}
+
+span.depth_3 {display: inline-block;margin-left: 5em;text-indent: -1em;}
+
+span.depth_4 {display: inline-block;margin-left: 7em;text-indent: -1em;}
+  </style>
+ </head>
+ <body>
+  <div class="body-wrapper">
+   <div class="menu-bg">
+   </div>
+   <div class="header-wrapper">
+    <div class="header-wrap-bar">
+    </div>
+    <div id="header">
+     <dl id="skip">
+      <dt>
+       <strong class="hid">
+        바로가기 메뉴
+       </strong>
+      </dt>
+      <dd>
+       <a class="golnb" href="#main_menu">
+        메인메뉴 바로가기
+       </a>
+      </dd>
+     </dl>
+     <div id="gnb">
+      <div class="goto-kma" id="goto-kma">
+       <a href="#content">
+        본문바로가기 (SKIP TO CONTENT)
+       </a>
+      </div>
+      <div style="display: inline-block; position: relative; left: 262px; top: 10px;">
+       <a href="http://www.weather.go.kr" style="text-decoration:none; " target="_blank">
+        <p style="width:190px; text-align:center; font-size:14px; font-weight:bold; color:#ffffff; padding: 3px; ">
+         (신)날씨누리 바로가기 &gt;
+        </p>
+       </a>
+      </div>
+      <ul id="area">
+       <li class="sitemap">
+        <a href="/weather/global/sitemap_weather.jsp">
+         사이트맵
+        </a>
+       </li>
+       <li class="wind">
+        <ul class="clearfix" id="unit-option-group">
+         <li class="title">
+          풍속단위
+         </li>
+         <li>
+          <a data-option-windspeed="M" href="#unit-ms">
+           m/s
+          </a>
+         </li>
+         <li>
+          <a data-option-windspeed="K" href="#unit-kmh">
+           km/h
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="language">
+        <ul class="clearfix">
+         <li>
+          <a href="http://www.kma.go.kr/eng/index.jsp" target="_blank" title="새창열림">
+           ENG
+          </a>
+         </li>
+         <li>
+          <a href="http://www.kma.go.kr/jpn/index.jsp" target="_blank" title="새창열림">
+           JPN
+          </a>
+         </li>
+         <li>
+          <a href="http://www.kma.go.kr/chn/index.jsp" target="_blank" title="새창열림">
+           CHN
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="search">
+        <form action="http://www.kma.go.kr/search/kmaSearch.jsp" class="global_top_search" method="post" name="search_dictionary">
+         <fieldset>
+          <legend>
+           통합 검색
+          </legend>
+          <p class="view">
+           <input class="inputbase" id="input_keyword1" name="keyword" placeholder="검색어 입력" title="검색어 입력" type="text" value=""/>
+           <input alt="검색" class="button" src="/weather/home/images/search-btn01.gif" type="image"/>
+          </p>
+         </fieldset>
+        </form>
+       </li>
+       <li class="homepage">
+        <a href="http://www.kma.go.kr/home/index.jsp">
+         <span>
+          기상청 행정홈페이지 바로 가기
+         </span>
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div id="topMenu">
+      <h1>
+       <a href="/weather/main.jsp">
+        <img alt="날씨누리 기상청 국가기상종합정보" src="/images/kma/weather_logo_b.gif"/>
+       </a>
+      </h1>
+      <div id="main_menu">
+       <noscript>
+        하위메뉴선택은 자바스크립트 기능이 있어야 선택하실 수 있습니다.
+       </noscript>
+       <a id="golnb">
+       </a>
+       <ul id="lnb">
+        <li class="div-9" id="top-menu1">
+         <a href="/weather/warning/status.jsp" id="top-menu-head1">
+          특보 · 예보
+         </a>
+         <ul id="top-sub-menu1" style="display: none;">
+          <li id="top-1-1">
+           <a class="addon" href="/weather/warning/status.jsp">
+            특보 · 정보
+           </a>
+           <ul>
+            <li>
+             <a href="/weather/warning/status.jsp">
+              특보현황
+             </a>
+            </li>
+            <li>
+             <a href="/weather/warning/report.jsp">
+              통보문
+             </a>
+            </li>
+            <!--<li><a href="/weather/warning/heatwave.jsp">폭염영향예보</a></li>
+
+										<li><a href="/weather/warning/coldwave.jsp">한파영향예보</a></li>-->
+            <li>
+             <a href="/weather/warning/wtouchqNew.jsp">
+              인터넷기상방송
+              <br/>
+              (날씨ON)
+             </a>
+            </li>
+            <li>
+             <a href="/weather/warning/standard.jsp">
+              기상특보 발표기준
+             </a>
+            </li>
+            <li>
+             <a href="/weather/warning/safetyguide_asiandust.jsp">
+              국민행동요령
+             </a>
+            </li>
+            <li>
+             <a href="/weather/warning/fog_status.jsp">
+              안개정보서비스
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li id="top-1-2">
+           <a href="/weather/forecast/timeseries.jsp">
+            육상예보
+           </a>
+           <ul>
+            <li>
+             <a href="/weather/forecast/timeseries.jsp">
+              동네예보
+             </a>
+            </li>
+            <li>
+             <a href="/weather/forecast/mid-term_01.jsp">
+              중기예보(10일 예보)
+             </a>
+            </li>
+            <li>
+             <a href="/weather/forecast/weekend.jsp">
+              주말예보
+             </a>
+            </li>
+            <li>
+             <a href="/weather/forecast/long-range1.jsp">
+              1개월전망
+             </a>
+            </li>
+            <li>
+             <a href="/weather/forecast/long-range3.jsp">
+              3개월전망
+             </a>
+            </li>
+            <li>
+             <a href="/weather/forecast/long-range3-guide.jsp">
+              3개월전망 해설서
+             </a>
+            </li>
+            <li>
+             <a href="/weather/forecast/season.jsp">
+              기후전망
+             </a>
+            </li>
+            <li>
+             <a href="/weather/forecast/drought-range1.jsp">
+              기상가뭄예보
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li id="top-1-3">
+           <a href="/weather/forecast/marine_daily.jsp">
+            해상예보
+           </a>
+           <ul>
+            <li>
+             <a href="/weather/forecast/marine_daily.jsp">
+              일일예보
+             </a>
+            </li>
+            <li>
+             <a href="/weather/forecast/marine_mid-term.jsp">
+              중기예보(10일 예보)
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li id="top-1-4">
+           <a href="/weather/forecast/northkorea01.jsp">
+            북한예보
+           </a>
+           <ul>
+            <li>
+             <a href="/weather/forecast/northkorea01.jsp">
+              육상예보
+             </a>
+            </li>
+            <li>
+             <a href="/weather/forecast/northkorea02.jsp">
+              바다예보
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li id="top-1-5">
+           <a href="/weather/forecast/mountain_01.jsp">
+            테마예보
+           </a>
+           <ul>
+            <li>
+             <a href="/weather/forecast/mountain_01.jsp">
+              산악기상
+             </a>
+            </li>
+            <li>
+             <a href="/weather/forecast/theme_beach.jsp">
+              해수욕장 예보
+             </a>
+            </li>
+            <li>
+             <a href="/weather/forecast/theme_regional.jsp">
+              지역별기상정보
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li id="top-1-7">
+           <a href="/weather/forecast/el-la.jsp">
+            엘니뇨
+            <br/>
+            ·라니냐전망
+           </a>
+           <ul class="ul01 clearfix">
+            <li class="mgr0" id="top-1-8">
+             <a href="/weather/forecast/forecaetevalue_01.jsp">
+              예보평가
+             </a>
+             <ul>
+              <li>
+               <a href="/weather/forecast/forecaetevalue_01.jsp">
+                연도별
+               </a>
+              </li>
+              <li>
+               <a href="/weather/forecast/forecaetevalue_02.jsp">
+                월별
+               </a>
+              </li>
+             </ul>
+            </li>
+           </ul>
+          </li>
+          <li class="bottom">
+           <ul class="clearfix">
+            <li>
+             <a href="http://amo.kma.go.kr/new/html/weather/weather01_04.jsp" target="_blank" title="새창 열림">
+              공항경보
+              <br/>
+              (항공기상청)
+             </a>
+            </li>
+            <li>
+             <a href="http://amo.kma.go.kr/new/html/weather/weather01_03.jsp" target="_blank" title="새창 열림">
+              공항예보
+              <br/>
+              (항공기상청)
+             </a>
+            </li>
+            <li>
+             <a href="https://www.airkorea.or.kr" target="_blank" title="새창 열림">
+              미세먼지예보
+              <br/>
+              (Air Korea)
+             </a>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="div-9" id="top-menu2">
+         <a href="/weather/images/rader.jsp" id="top-menu-head2">
+          날씨영상
+         </a>
+         <ul id="top-sub-menu2" style="display:none; left: -105px;">
+          <li id="top-2-1">
+           <a href="/weather/images/rader.jsp">
+            레이더
+           </a>
+           <ul>
+            <li>
+             <a href="/weather/images/rader.jsp">
+              합성영상
+             </a>
+            </li>
+            <li>
+             <a href="/weather/images/rader_02.jsp">
+              눈비영역
+             </a>
+            </li>
+            <li>
+             <a href="/weather/images/rader_04.jsp">
+              우박
+             </a>
+            </li>
+            <li>
+             <a href="/weather/images/rader_03.jsp">
+              누적강수
+             </a>
+            </li>
+            <li>
+             <a href="/weather/images/rader_individual.jsp">
+              지점별 영상
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li id="top-2-2">
+           <a href="/weather/images/satellite_service.jsp">
+            위성
+           </a>
+           <ul class="clearfix">
+            <li>
+             <a href="/weather/images/satellite_service.jsp">
+              기본영상
+             </a>
+            </li>
+            <li>
+             <a href="/weather/images/satellite_case.jsp">
+              사례영상
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li id="top-2-3">
+           <a href="/weather/images/lightning.jsp">
+            낙뢰
+           </a>
+          </li>
+          <li id="top-2-4">
+           <a href="/weather/images/rader_sat_lgt.jsp">
+            종합영상
+            <br/>
+            (레이더/위성/낙뢰)
+           </a>
+           <ul class="ul01 clearfix">
+            <li class="mgr0" id="top-2-5">
+             <a href="/weather/images/rader_qpf.jsp">
+              초단기 강수예측
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li id="top-2-6">
+           <a href="/weather/images/analysischart.jsp">
+            일기도
+           </a>
+           <ul>
+            <li>
+             <a href="/weather/images/analysischart.jsp">
+              분석일기도
+             </a>
+            </li>
+            <li>
+             <a href="/weather/images/forecastchart.jsp">
+              육상예상일기도
+             </a>
+            </li>
+            <li>
+             <a href="/weather/images/wavemodel_r3.jsp">
+              해상예상일기도
+             </a>
+            </li>
+            <li>
+             <a href="/weather/images/expertchart.jsp">
+              전문가용일기도
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li id="top-2-7">
+           <a href="/weather/home/earth/index.jsp" target="_blank">
+            비주얼맵
+           </a>
+          </li>
+          <li class="bottom">
+           <ul class="clearfix">
+            <li>
+             <a href="http://nmsc.kma.go.kr" target="_blank" title="새창 열림">
+              국가기상위성센터
+              <br/>
+             </a>
+            </li>
+            <li>
+             <a href="http://radar.kma.go.kr" target="_blank" title="새창 열림">
+              기상레이더센터
+              <br/>
+             </a>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="div-9" id="top-menu3">
+         <a href="/mini/marine/marine_integrate.jsp" id="top-menu-head3">
+          바다날씨
+         </a>
+         <ul id="top-sub-menu3" style="display:none; left: -211px;">
+          <li id="top-3-1">
+           <a href="/mini/marine/marine_integrate.jsp">
+            현재바다날씨
+           </a>
+           <ul>
+            <li>
+             <a href="/mini/marine/marine_integrate.jsp">
+              해양기상부이
+             </a>
+            </li>
+            <li>
+             <a href="/mini/marine/marine_beacon.jsp">
+              국내등표
+             </a>
+            </li>
+            <li>
+             <a href="/mini/marine/marine_buoy_cosmos.jsp">
+              파고부이
+             </a>
+            </li>
+            <li>
+             <a href="/mini/marine/marine_asia.jsp">
+              아시아연안관측실황
+             </a>
+            </li>
+            <li>
+             <a href="/mini/marine/marine_onshorewind.jsp">
+              위성영상
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li id="top-3-2">
+           <a href="/mini/marine/marine_daily.jsp">
+            해상예보
+           </a>
+           <ul>
+            <li>
+             <a href="/mini/marine/marine_daily.jsp">
+              일일예보
+             </a>
+            </li>
+            <li>
+             <a href="/mini/marine/marine_mid-term.jsp">
+              중기예보(10일예보)
+             </a>
+            </li>
+            <li>
+             <a href="/mini/marine/marine_zone_rwwsst.jsp">
+              해구별 예측정보
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li id="top-3-3">
+           <a href="/mini/marine/wavemodel_r3.jsp">
+            해상수치예측일기도
+           </a>
+           <ul>
+            <li>
+             <a href="/mini/marine/wavemodel_r3.jsp">
+              파랑
+             </a>
+            </li>
+            <li>
+             <a href="/mini/marine/stormsurge.jsp">
+              폭풍해일
+             </a>
+            </li>
+            <li>
+             <a href="/mini/marine/roms_crnt.jsp">
+              해양순환
+             </a>
+            </li>
+            <li>
+             <a href="/mini/marine/marine_index_icing.jsp">
+              해양지수
+             </a>
+            </li>
+            <li>
+             <a href="/mini/marine/marine_route.jsp">
+              항로
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li id="top-3-4">
+           <a href="/mini/marine/marine_fax04.jsp">
+            해양기상방송
+            <br>
+             (일기도 FAX방송)
+            </br>
+           </a>
+           <ul>
+            <li>
+             <a href="/mini/marine/marine_fax04.jsp">
+              개요
+             </a>
+            </li>
+            <li>
+             <a href="/mini/marine/marine_fax02.jsp">
+              방송내용 및 제원
+             </a>
+            </li>
+            <li>
+             <a href="/mini/marine/marine_fax03.jsp">
+              방송시간표
+             </a>
+            </li>
+            <li>
+             <a href="/mini/marine/marine_fax01.jsp">
+              세계주요지역 기상방송센터
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li id="top-3-5">
+           <a href="/mini/marine/marine_summary.jsp">
+            월별 해양기상도
+           </a>
+           <ul>
+            <li>
+             <a href="/mini/marine/marine_summary.jsp">
+              개요
+             </a>
+            </li>
+            <li>
+             <a href="/mini/marine/marine_eastasia.jsp">
+              동아시아
+             </a>
+            </li>
+            <li>
+             <a href="/mini/marine/marine_northpacific.jsp">
+              태평양
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li id="top-3-6">
+           <a href="/mini/marine/marine_vos01.jsp">
+            관측지원선박(VOS)제도
+           </a>
+           <ul>
+            <li>
+             <a href="/mini/marine/marine_vos01.jsp">
+              소개
+             </a>
+            </li>
+            <li>
+             <a href="/mini/marine/marine_shipobserv.jsp">
+              선박관측자료
+             </a>
+            </li>
+            <li>
+             <a href="/mini/marine/marine_vos02.jsp">
+              선박관측 전문해설
+             </a>
+            </li>
+            <li>
+             <a href="/mini/marine/marine_vos03.jsp">
+              항만기상관 현황
+             </a>
+            </li>
+            <li>
+             <a href="/mini/marine/marine_vos04.jsp">
+              관측지원선박 목록
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="bottom">
+           <ul class="clearfix">
+            <li>
+             <a href="http://marine.kma.go.kr" target="_blank" title="새창 열림">
+              해양기상정보포털
+              <br/>
+              Sea for you
+             </a>
+            </li>
+            <li>
+             <a href="http://www.kma.go.kr/communication/webzine/marine.jsp" target="_blank" title="새창 열림">
+              연근해선박기상정보
+              <br>
+               (월간)
+              </br>
+             </a>
+            </li>
+            <li>
+             <a href="http://www.nifs.go.kr/risa/main.risa" target="_blank" title="새창 열림">
+              연근해수온정보
+              <br>
+               (국립수산과학원)
+              </br>
+             </a>
+            </li>
+            <li>
+             <a href="http://www.khoa.go.kr/kcom/cnt/selectContentsPage.do?cntId=31304010" target="_blank" title="새창 열림">
+              항해안전정보
+              <br/>
+              (국립해양조사원)
+             </a>
+            </li>
+            <li>
+             <a href="http://www.khoa.go.kr/swtc/main.do" target="_blank" title="새창 열림">
+              물때정보
+              <br/>
+              (국립해양조사원)
+             </a>
+            </li>
+            <li>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="div-9" id="top-menu4">
+         <a href="/weather/typoon/report.jsp" id="top-menu-head4">
+          태풍
+         </a>
+         <ul id="top-sub-menu4" style="display:none; left: -316px;">
+          <li id="top-4-1">
+           <a href="/weather/typoon/report.jsp">
+            태풍정보
+           </a>
+           <ul>
+            <li>
+             <a href="/weather/typoon/report.jsp">
+              통보문
+             </a>
+            </li>
+            <li>
+             <a href="/weather/typoon/detail.jsp">
+              상세정보
+             </a>
+            </li>
+            <li>
+             <a href="/weather/typoon/prediction.jsp">
+              모델예측
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li id="top-4-2">
+           <a href="/weather/typoon/typhoon_06_02.jsp">
+            참고정보
+           </a>
+           <ul>
+            <li>
+             <a href="/weather/typoon/typhoon_06_02.jsp">
+              발생 감시
+             </a>
+            </li>
+            <li>
+             <a href="/weather/typoon/statistic.jsp">
+              발생 통계
+             </a>
+            </li>
+            <li>
+             <a href="/weather/typoon/typhoon_06_01.jsp">
+              태풍 찾아보기
+             </a>
+            </li>
+            <li>
+             <a href="/weather/typoon/knowledge_01.jsp">
+              기본 지식
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="bottom">
+           <ul class="clearfix">
+            <!--<li><a href="http://typ.kma.go.kr" target="_blank" title="새창 열림">국가태풍센터<br />&nbsp;</a></li>-->
+            <li>
+             <a href="http://www.safekorea.go.kr" target="_blank" title="새창 열림">
+              국민재난안전포탈
+              <br/>
+              (행정안전부)
+             </a>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="div-9" id="top-menu5">
+         <a href="/weather/asiandust/density.jsp" id="top-menu-head5">
+          황사
+         </a>
+         <ul id="top-sub-menu5" style="display:none; left: -422px;">
+          <li id="top-5-1">
+           <a href="/weather/asiandust/density.jsp">
+            황사/부유분진
+            <br/>
+            관측값
+           </a>
+          </li>
+          <li id="top-5-2">
+           <a href="/weather/asiandust/graph.jsp">
+            황사/부유분진
+            <br/>
+            관측 그래프
+           </a>
+          </li>
+          <li id="top-5-3">
+           <a href="/weather/asiandust/prediction.jsp">
+            모델예측
+           </a>
+          </li>
+          <li id="top-5-4">
+           <a href="/weather/asiandust/chart.jsp">
+            지상일기도
+           </a>
+          </li>
+          <li id="top-5-6">
+           <a href="/weather/asiandust/observday.jsp">
+            황사관측일수
+           </a>
+          </li>
+          <li class="bottom">
+           <ul class="clearfix">
+            <li>
+             <a href="http://www.kma.go.kr/aboutkma/biz/asiandust01.jsp" target="_blank" title="새창 열림">
+              황사업무소개
+              <br/>
+              (행정)
+             </a>
+            </li>
+            <li>
+             <a href="http://www.safekorea.go.kr" target="_blank" title="새창 열림">
+              국민재난안전포탈
+              <br/>
+              (행정안전부)
+             </a>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="div-9" id="top-menu6">
+         <a href="/weather/earthquake_volcano/report.jsp" id="top-menu-head6">
+          지진 · 화산
+         </a>
+         <ul id="top-sub-menu6" style="display:none; left: -527px;">
+          <li id="top-6-1">
+           <a href="/weather/earthquake_volcano/report.jsp">
+            발표정보
+           </a>
+          </li>
+          <li id="top-6-2">
+           <a href="/weather/earthquake_volcano/domesticlist.jsp">
+            지진
+           </a>
+           <ul>
+            <li>
+             <a href="/weather/earthquake_volcano/domesticlist.jsp">
+              국내지진 목록
+             </a>
+            </li>
+            <li>
+             <a href="/weather/earthquake_volcano/internationallist.jsp">
+              국외지진 목록
+             </a>
+            </li>
+            <li>
+             <a href="/weather/earthquake_volcano/domestictrend.jsp">
+              국내지진 발생추이
+             </a>
+            </li>
+            <li>
+             <a href="/weather/earthquake_volcano/scalelist.jsp">
+              국내지진 규모별순위
+             </a>
+            </li>
+            <li>
+             <a href="/weather/earthquake_volcano/major_912.jsp">
+              주요 지진
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li id="top-6-3">
+           <a href="/weather/earthquake_volcano/tidalwave_02.jsp">
+            지진해일
+           </a>
+           <ul class="clearfix">
+            <li>
+             <a href="/weather/earthquake_volcano/tidalwave_02.jsp">
+              과거 지진해일
+              <br/>
+              사례
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li id="top-6-4">
+           <a href="/weather/earthquake_volcano/volcano_01.jsp">
+            화산
+           </a>
+           <ul>
+            <li>
+             <a href="/weather/earthquake_volcano/volcano_02_1.jsp">
+              과거 화산 사례
+             </a>
+            </li>
+            <li>
+             <a href="/weather/earthquake_volcano/volcano_03.jsp">
+              화산재해 유형
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li id="top-6-6">
+           <a href="/weather/earthquake_volcano/evacuation_procedure.jsp">
+            교육·홍보
+           </a>
+           <ul>
+            <li>
+             <a href="/weather/earthquake_volcano/evacuation_procedure.jsp">
+              지진·화산 대피요령
+             </a>
+            </li>
+            <li>
+             <a href="/weather/earthquake_volcano/earthquakemovie.jsp">
+              지진·화산 홍보물
+             </a>
+            </li>
+            <li>
+             <a href="/weather/earthquake_volcano/faq.jsp">
+              FAQ
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="bottom">
+           <ul class="clearfix">
+            <li>
+             <a href="http://www.kma.go.kr/communication/webzine/earthquakeyearly.jsp" target="_blank" title="새창 열림">
+              지진연보
+              <br/>
+              (행정)
+             </a>
+            </li>
+            <li>
+             <a href="http://www.kma.go.kr/aboutkma/biz/earthquake_volcano_01.jsp" target="_blank" title="새창 열림">
+              지진·화산 업무소개
+              <br/>
+              (행정)
+             </a>
+            </li>
+            <li>
+             <a href="http://www.safekorea.go.kr" target="_blank" title="새창 열림">
+              국민재난안전포탈
+              <br/>
+              (행정안전부)
+             </a>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="div-9" id="top-menu7">
+         <a href="/weather/observation/currentweather.jsp" id="top-menu-head7">
+          관측자료
+         </a>
+         <ul id="top-sub-menu7" style="display:none; left: -633px;">
+          <li id="top-7-1">
+           <a href="/weather/observation/currentweather.jsp">
+            지상관측자료
+           </a>
+           <ul>
+            <li>
+             <a href="/weather/observation/currentweather.jsp">
+              도시별 현재날씨
+             </a>
+            </li>
+            <li>
+             <a href="/weather/observation/dashboard.jsp">
+              날씨상황판
+             </a>
+            </li>
+            <li>
+             <a href="/weather/climate/past_cal.jsp">
+              과거자료
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li id="top-7-2">
+           <a href="http://web.kma.go.kr/weather/observation/flower_photo.jsp">
+            계절관측자료
+           </a>
+           <ul>
+            <li>
+             <a href="http://web.kma.go.kr/weather/observation/flower_photo.jsp">
+              봄꽃개화현황
+              <br/>
+              (벚꽃,철쭉)
+             </a>
+            </li>
+            <!--<li><a href="http://web.kma.go.kr/weather/observation/maple_photo.jsp">유명산 단풍현황</a></li>-->
+           </ul>
+          </li>
+          <li id="top-7-3">
+           <a href="/weather/observation/marine_buoy.jsp">
+            바다관측자료
+           </a>
+           <ul>
+            <li>
+             <a href="/weather/observation/marine_buoy.jsp">
+              국내부이
+             </a>
+            </li>
+            <li>
+             <a href="/weather/observation/marine_buoy_cosmos.jsp">
+              파고부이
+             </a>
+            </li>
+            <li>
+             <a href="/weather/observation/marine_beacon.jsp">
+              국내등표
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="bottom">
+           <ul class="clearfix">
+            <li>
+             <a href="/weather/observation/aws_table_popup.jsp" target="_blank" title="새창열림">
+              지역별 상세관측자료
+              <br/>
+              (AWS)
+             </a>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="div-9 left-popup" id="top-menu8">
+         <a href="/weather/climate/average_south.jsp" id="top-menu-head8">
+          기후자료
+         </a>
+         <ul id="top-sub-menu8" style="display:none; left: -738px;">
+          <li id="top-8-1">
+           <a href="/weather/climate/average_south.jsp">
+            국내기후자료
+           </a>
+           <ul>
+            <li>
+             <a href="/weather/climate/average_south.jsp">
+              우리나라기후
+             </a>
+            </li>
+            <li>
+             <a href="/weather/climate/climate_link_guide.jsp">
+              기후자료제공안내
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li id="top-8-3">
+           <a href="/weather/climate/wind_solar_guide.jsp">
+            풍력·태양광기상자원지도 안내
+           </a>
+          </li>
+          <li class="bottom">
+           <ul class="clearfix">
+            <li>
+             <a href="http://www.climate.go.kr" target="_blank" title="새창열림">
+              기후정보포털
+              <br/>
+              (기상청)
+             </a>
+            </li>
+            <li>
+             <a href="https://data.kma.go.kr/" target="_blank" title="새창열림">
+              기상자료개방포털
+              <br/>
+              (기상청)
+             </a>
+            </li>
+            <li>
+             <a href="http://www.greenmap.go.kr/" target="_blank" title="새창열림">
+              고해상도기상자원지도
+              <br/>
+              (국립기상과학원)
+             </a>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li class="div-9 left-popup" id="top-menu9">
+         <a href="/weather/lifenindustry/life_jisu.jsp" id="top-menu-head9">
+          생활과산업
+         </a>
+         <ul id="top-sub-menu9" style="display:none; left: -844px;">
+          <li id="top-9-1">
+           <a href="/weather/lifenindustry/life_jisu.jsp">
+            생활기상정보
+           </a>
+          </li>
+          <!--<li id="top-9-4"><a href="/weather/lifenindustry/disaster_01.jsp">기상재해통계</a>
+
+									<ul>
+
+										<li><a href="/weather/lifenindustry/disaster_01.jsp">기상재해현황</a></li>
+
+										<li><a href="/weather/lifenindustry/disaster_03.jsp">기상재해순위</a></li>
+
+										<li><a href="/weather/lifenindustry/disaster_04.jsp">태풍피해순위</a></li>
+
+									</ul>
+
+								</li>-->
+          <li id="top-9-5">
+           <a href="/weather/world/cityweather.jsp">
+            세계날씨
+           </a>
+          </li>
+          <li id="top-9-6">
+           <a href="/weather/lifenindustry/sevice_website.jsp">
+            서비스
+           </a>
+           <ul>
+            <li>
+             <a href="/weather/lifenindustry/sevice_website.jsp">
+              인터넷
+             </a>
+            </li>
+            <li>
+             <a href="/weather/lifenindustry/sevice_use.jsp">
+              모바일
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="bottom">
+           <ul class="clearfix">
+            <li>
+             <a href="https://data.kma.go.kr/data/grnd/selectAgrRltmList.do?pgmNo=72" target="_blank" title="새창열림">
+              농업기상정보
+              <br/>
+              (국가기후데이터센터)
+             </a>
+            </li>
+            <li>
+             <a href="https://hydro.kma.go.kr" target="_blank" title="새창열림">
+              가뭄정보
+              <br/>
+              (강수현황)
+             </a>
+            </li>
+            <li>
+             <a href="http://www.safekorea.go.kr" target="_blank" title="새창 열림">
+              국민재난안전포탈
+              <br/>
+              (행정안전부)
+             </a>
+            </li>
+            <li>
+             <a class="last-of-top-menu" href="http://forestfire.nifos.go.kr" target="_blank" title="새창 열림">
+              산불위험예보시스템
+              <br/>
+              (국립산림과학원)
+             </a>
+            </li>
+            <li>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+       </ul>
+       <a class="menu-more" href="#more-all">
+        <img alt="전체메뉴 보기" src="/weather/home/images/menu-all.gif"/>
+       </a>
+       <a class="menu-more-close" href="#more-all-close">
+        <img alt="전체메뉴 닫기" src="/weather/home/images/menu-all-close.gif"/>
+       </a>
+       <div class="menu-all-div" tabindex="0">
+        <ul class="lnb">
+         <li class="div-9">
+          <a href="/weather/warning/status.jsp">
+           특보 · 예보
+          </a>
+          <ul>
+           <li>
+            <a class="addon" href="/weather/warning/status.jsp">
+             특보 · 정보
+            </a>
+            <ul>
+             <li>
+              <a href="/weather/warning/status.jsp">
+               특보현황
+              </a>
+             </li>
+             <li>
+              <a href="/weather/warning/report.jsp">
+               통보문
+              </a>
+             </li>
+             <!--<li><a href="/weather/warning/heatwave.jsp">폭염영향예보</a></li>
+
+											<li><a href="/weather/warning/coldwave.jsp">한파영향예보</a></li>-->
+             <li>
+              <a href="/weather/warning/wtouchqNew.jsp">
+               인터넷기상방송
+               <br/>
+               (날씨ON)
+              </a>
+             </li>
+             <li>
+              <a href="/weather/warning/standard.jsp">
+               기상특보 발표기준
+              </a>
+             </li>
+             <li>
+              <a href="/weather/warning/safetyguide_asiandust.jsp">
+               국민행동요령
+              </a>
+             </li>
+             <li>
+              <a href="/weather/warning/fog_status.jsp">
+               안개정보서비스
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a class="addon" href="/weather/forecast/timeseries.jsp">
+             육상예보
+            </a>
+            <ul>
+             <li>
+              <a href="/weather/forecast/timeseries.jsp">
+               동네예보
+              </a>
+             </li>
+             <li>
+              <a href="/weather/forecast/mid-term_01.jsp">
+               중기예보(10일 예보)
+              </a>
+             </li>
+             <li>
+              <a href="/weather/forecast/weekend.jsp">
+               주말예보
+              </a>
+             </li>
+             <li>
+              <a href="/weather/forecast/long-range1.jsp">
+               1개월전망
+              </a>
+             </li>
+             <li>
+              <a href="/weather/forecast/long-range3.jsp">
+               3개월전망
+              </a>
+             </li>
+             <li>
+              <a href="/weather/forecast/long-range3-guide.jsp">
+               3개월전망 해설서
+              </a>
+             </li>
+             <li>
+              <a href="/weather/forecast/season.jsp">
+               기후전망
+              </a>
+             </li>
+             <li>
+              <a href="/weather/forecast/drought-range1.jsp">
+               기상가뭄예보
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a class="addon" href="/weather/forecast/marine_daily.jsp">
+             해상예보
+            </a>
+            <ul>
+             <li>
+              <a href="/weather/forecast/marine_daily.jsp">
+               일일예보
+              </a>
+             </li>
+             <li>
+              <a href="/weather/forecast/marine_mid-term.jsp">
+               중기예보(10일 예보)
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a class="addon" href="/weather/forecast/northkorea01.jsp">
+             북한예보
+            </a>
+            <ul>
+             <li>
+              <a href="/weather/forecast/northkorea01.jsp">
+               육상예보
+              </a>
+             </li>
+             <li>
+              <a href="/weather/forecast/northkorea02.jsp">
+               바다예보
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a class="addon" href="/weather/forecast/mountain_01.jsp">
+             테마예보
+            </a>
+            <ul>
+             <li>
+              <a href="/weather/forecast/mountain_01.jsp">
+               산악기상
+              </a>
+             </li>
+             <li>
+              <a href="/weather/forecast/theme_beach.jsp">
+               해수욕장 예보
+              </a>
+             </li>
+             <li>
+              <a href="/weather/forecast/theme_regional.jsp">
+               지역별기상정보
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a class="addon" href="/weather/forecast/el-la.jsp">
+             엘니뇨·라니냐전망
+            </a>
+            <ul class="ul01 clearfix">
+             <li class="mgr0">
+              <a class="addon" href="/weather/forecast/forecaetevalue_01.jsp">
+               예보평가
+              </a>
+              <ul>
+               <li>
+                <a href="/weather/forecast/forecaetevalue_01.jsp">
+                 연도별
+                </a>
+               </li>
+               <li>
+                <a href="/weather/forecast/forecaetevalue_02.jsp">
+                 월별
+                </a>
+               </li>
+              </ul>
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </li>
+         <li class="div-9">
+          <a href="/weather/images/rader.jsp">
+           날씨영상
+          </a>
+          <ul style="height: 210px;">
+           <li>
+            <a class="addon" href="/weather/images/rader.jsp">
+             레이더
+            </a>
+            <ul>
+             <li>
+              <a href="/weather/images/rader.jsp">
+               합성영상
+              </a>
+             </li>
+             <li>
+              <a href="/weather/images/rader_02.jsp">
+               눈비영역
+              </a>
+             </li>
+             <li>
+              <a href="/weather/images/rader_04.jsp">
+               우박
+              </a>
+             </li>
+             <li>
+              <a href="/weather/images/rader_03.jsp">
+               누적강수
+              </a>
+             </li>
+             <li>
+              <a href="/weather/images/rader_individual.jsp">
+               지점별 영상
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a class="addon" href="/weather/images/satellite_service.jsp">
+             위성
+            </a>
+            <ul class="clearfix">
+             <li>
+              <a href="/weather/images/satellite_service.jsp">
+               기본영상
+              </a>
+             </li>
+             <li>
+              <a href="/weather/images/satellite_case.jsp">
+               사례영상
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a href="/weather/images/lightning.jsp">
+             낙뢰
+            </a>
+           </li>
+           <li>
+            <a href="/weather/images/rader_sat_lgt.jsp">
+             종합영상
+             <br/>
+             (레이더/위성/낙뢰)
+            </a>
+            <ul class="ul01 clearfix">
+             <li class="mgr0">
+              <a href="/weather/images/rader_qpf.jsp">
+               초단기 강수예측
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a class="addon" href="/weather/images/analysischart.jsp">
+             일기도
+            </a>
+            <ul>
+             <li>
+              <a href="/weather/images/analysischart.jsp">
+               분석일기도
+              </a>
+             </li>
+             <li>
+              <a href="/weather/images/forecastchart.jsp">
+               육상예상일기도
+              </a>
+             </li>
+             <li>
+              <a href="/weather/images/wavemodel_r3.jsp">
+               해상예상일기도
+              </a>
+             </li>
+             <li>
+              <a href="/weather/images/expertchart.jsp">
+               전문가용일기도
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a href="/weather/home/earth/index.jsp" target="_blank">
+             비주얼맵
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="div-9">
+          <a href="/mini/marine/marine_integrate.jsp">
+           바다날씨
+          </a>
+          <ul>
+           <li style="height: 210px;">
+            <a class="addon" href="/mini/marine/marine_integrate.jsp">
+             현재바다날씨
+            </a>
+            <ul>
+             <li>
+              <a href="/mini/marine/marine_integrate.jsp">
+               해양기상부이
+              </a>
+             </li>
+             <li>
+              <a href="/mini/marine/marine_beacon.jsp">
+               국내등표
+              </a>
+             </li>
+             <li>
+              <a href="/mini/marine/marine_buoy_cosmos.jsp">
+               파고부이
+              </a>
+             </li>
+             <li>
+              <a href="/mini/marine/marine_asia.jsp">
+               아시아연안관측실황
+              </a>
+             </li>
+             <li>
+              <a href="/mini/marine/marine_onshorewind.jsp">
+               위성영상
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li style="height: 210px;">
+            <a class="addon" href="/mini/marine/marine_daily.jsp">
+             해상예보
+            </a>
+            <ul>
+             <li>
+              <a href="/mini/marine/marine_daily.jsp">
+               일일예보
+              </a>
+             </li>
+             <li>
+              <a href="/mini/marine/marine_mid-term.jsp">
+               중기예보(10일예보)
+              </a>
+             </li>
+             <li>
+              <a href="/mini/marine/marine_zone_rwwsst.jsp">
+               해구별 예측정보
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li style="height: 210px;">
+            <a class="addon" href="/mini/marine/wavemodel_r3.jsp">
+             해상수치예측일기도
+            </a>
+            <ul>
+             <li>
+              <a href="/mini/marine/wavemodel_r3.jsp">
+               파랑
+              </a>
+             </li>
+             <li>
+              <a href="/mini/marine/stormsurge.jsp">
+               폭풍해일
+              </a>
+             </li>
+             <li>
+              <a href="/mini/marine/roms_crnt.jsp">
+               해양순환
+              </a>
+             </li>
+             <li>
+              <a href="/mini/marine/marine_index_icing.jsp">
+               해양지수
+              </a>
+             </li>
+             <li>
+              <a href="/mini/marine/marine_route.jsp">
+               항로
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li style="height: 210px;">
+            <a class="addon" href="/mini/marine/marine_fax04.jsp">
+             해양기상방송
+             <br/>
+             (일기도 FAX방송)
+            </a>
+            <ul>
+             <li>
+              <a href="/mini/marine/marine_fax04.jsp">
+               개요
+              </a>
+             </li>
+             <li>
+              <a href="/mini/marine/marine_fax02.jsp">
+               방송내용 및 제원
+              </a>
+             </li>
+             <li>
+              <a href="/mini/marine/marine_fax03.jsp">
+               방송시간표
+              </a>
+             </li>
+             <li>
+              <a href="/mini/marine/marine_fax01.jsp">
+               세계주요지역 기상방송센터
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li style="height: 210px;">
+            <a class="addon" href="/mini/marine/marine_summary.jsp">
+             월별 해양기상도
+            </a>
+            <ul>
+             <li>
+              <a href="/mini/marine/marine_summary.jsp">
+               개요
+              </a>
+             </li>
+             <li>
+              <a href="/mini/marine/marine_eastasia.jsp">
+               동아시아
+              </a>
+             </li>
+             <li>
+              <a href="/mini/marine/marine_northpacific.jsp">
+               태평양
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li style="height: 210px;">
+            <a class="addon" href="/mini/marine/marine_vos01.jsp">
+             관측지원선박(VOS)제도
+            </a>
+            <ul>
+             <li>
+              <a href="/mini/marine/marine_vos01.jsp">
+               소개
+              </a>
+             </li>
+             <li>
+              <a href="/mini/marine/marine_shipobserv.jsp">
+               선박관측자료
+              </a>
+             </li>
+             <li>
+              <a href="/mini/marine/marine_vos02.jsp">
+               선박관측 전문해설
+              </a>
+             </li>
+             <li>
+              <a href="/mini/marine/marine_vos03.jsp">
+               항만기상관 현황
+              </a>
+             </li>
+             <li>
+              <a href="/mini/marine/marine_vos04.jsp">
+               관측지원선박 목록
+              </a>
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </li>
+         <li class="div-9">
+          <a href="/weather/typoon/report.jsp">
+           태풍
+          </a>
+          <ul class="active">
+           <li style="height: 146px;">
+            <a class="addon" href="/weather/typoon/report.jsp">
+             태풍정보
+            </a>
+            <ul>
+             <li>
+              <a href="/weather/typoon/report.jsp">
+               통보문
+              </a>
+             </li>
+             <li>
+              <a href="/weather/typoon/detail.jsp">
+               상세정보
+              </a>
+             </li>
+             <li>
+              <a href="/weather/typoon/prediction.jsp">
+               모델예측
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li style="height: 146px;">
+            <a class="addon" href="/weather/typoon/typhoon_06_02.jsp">
+             참고정보
+            </a>
+            <ul>
+             <li style="border-right: 1px solid #e5e5e5;">
+              <a href="/weather/typoon/typhoon_06_02.jsp">
+               발생 감시
+              </a>
+             </li>
+             <li style="border-right: 1px solid #e5e5e5;">
+              <a href="/weather/typoon/statistic.jsp">
+               발생 통계
+              </a>
+             </li>
+             <li style="position: absolute; left: 158px; top: 36px;">
+              <a href="/weather/typoon/typhoon_06_01.jsp">
+               태풍 찾아보기
+              </a>
+             </li>
+             <li style="position: absolute; left: 158px; top: 72px;">
+              <a href="/weather/typoon/knowledge_01.jsp">
+               기본 지식
+              </a>
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </li>
+         <li class="div-9">
+          <a href="/weather/asiandust/density.jsp">
+           황사
+          </a>
+          <ul>
+           <li style="height:57px;margin-bottom: 10px;">
+            <a href="/weather/asiandust/density.jsp">
+             황사/부유분진
+             <br/>
+             관측값
+            </a>
+           </li>
+           <li style="height:57px;margin-bottom: 10px;">
+            <a href="/weather/asiandust/graph.jsp">
+             황사/부유분진
+             <br/>
+             관측 그래프
+            </a>
+           </li>
+           <li style="height:57px;margin-bottom: 10px; border: 0;">
+            <a href="/weather/asiandust/prediction.jsp">
+             모델예측
+            </a>
+           </li>
+           <li style="height:57px;">
+            <a href="/weather/asiandust/chart.jsp">
+             지상일기도
+            </a>
+           </li>
+           <li style="height:57px;">
+            <a href="/weather/asiandust/observday.jsp">
+             황사관측일수
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="div-9">
+          <a href="/weather/earthquake_volcano/report.jsp">
+           지진 · 화산
+          </a>
+          <ul>
+           <li style="height: 168px;">
+            <a href="/weather/earthquake_volcano/report.jsp">
+             발표정보
+            </a>
+           </li>
+           <li style="height: 168px;">
+            <a class="addon" href="/weather/earthquake_volcano/domesticlist.jsp">
+             지진
+            </a>
+            <ul>
+             <li style="border-right: 1px solid #e5e5e5;">
+              <a href="/weather/earthquake_volcano/domesticlist.jsp">
+               국내지진 목록
+              </a>
+             </li>
+             <li style=" border-right: 1px solid #e5e5e5;">
+              <a href="/weather/earthquake_volcano/internationallist.jsp">
+               국외지진 목록
+              </a>
+             </li>
+             <li style=" border-right: 1px solid #e5e5e5;">
+              <a href="/weather/earthquake_volcano/domestictrend.jsp">
+               국내지진 발생추이
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li style="height: 168px;">
+            <a class="addon">
+            </a>
+            <ul>
+             <li style=" border-right: 1px solid #e5e5e5;">
+              <a href="/weather/earthquake_volcano/scalelist.jsp">
+               국내지진 규모별순위
+              </a>
+             </li>
+             <li style=" border-right: 1px solid #e5e5e5;">
+              <a href="/weather/earthquake_volcano/major_912.jsp">
+               주요 지진
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li style="height: 168px;">
+            <a class="addon" href="/weather/earthquake_volcano/tidalwave_02.jsp">
+             지진해일
+            </a>
+            <ul class="clearfix">
+             <li>
+              <a href="/weather/earthquake_volcano/tidalwave_02.jsp">
+               과거 지진해일
+               <br/>
+               사례
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li style="height: 168px;">
+            <a class="addon" href="/weather/earthquake_volcano/volcano_01.jsp">
+             화산
+            </a>
+            <ul>
+             <li>
+              <a href="/weather/earthquake_volcano/volcano_02_1.jsp">
+               과거 화산 사례
+              </a>
+             </li>
+             <li>
+              <a href="/weather/earthquake_volcano/volcano_03.jsp">
+               화산재해 유형
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li style="height: 168px;">
+            <a class="addon" href="/weather/earthquake_volcano/evacuation_procedure.jsp">
+             교육·홍보
+            </a>
+            <ul>
+             <li>
+              <a href="/weather/earthquake_volcano/evacuation_procedure.jsp">
+               지진·화산 대피요령
+              </a>
+             </li>
+             <li>
+              <a href="/weather/earthquake_volcano/earthquakemovie.jsp">
+               지진·화산 홍보물
+              </a>
+             </li>
+             <li>
+              <a href="/weather/earthquake_volcano/faq.jsp">
+               FAQ
+              </a>
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </li>
+         <li class="div-9">
+          <a href="/weather/observation/currentweather.jsp">
+           관측자료
+          </a>
+          <ul class="active">
+           <li>
+            <a class="addon" href="/weather/observation/currentweather.jsp">
+             지상관측자료
+            </a>
+            <ul>
+             <li>
+              <a href="/weather/observation/currentweather.jsp">
+               도시별 현재날씨
+              </a>
+             </li>
+             <li>
+              <a href="/weather/observation/dashboard.jsp">
+               날씨상황판
+              </a>
+             </li>
+             <li>
+              <a href="/weather/observation/aws_table_popup.jsp" target="_blank" title="새창열림">
+               지역별상세관측자료(AWS)
+               <i>
+                새창
+               </i>
+              </a>
+             </li>
+             <li>
+              <a href="/weather/climate/past_cal.jsp">
+               과거자료
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a class="addon" href="http://web.kma.go.kr/weather/observation/flower_photo.jsp">
+             계절관측자료
+            </a>
+            <ul>
+             <li>
+              <a href="http://web.kma.go.kr/weather/observation/flower_photo.jsp">
+               봄꽃개화현황
+               <br/>
+               (벚꽃,철쭉)
+              </a>
+             </li>
+             <!--<li><a href="http://web.kma.go.kr/weather/observation/maple_photo.jsp">유명산 단풍현황</a></li>-->
+            </ul>
+           </li>
+           <li>
+            <a class="addon" href="/weather/observation/marine_buoy.jsp">
+             바다관측자료
+            </a>
+            <ul>
+             <li>
+              <a href="/weather/observation/marine_buoy.jsp">
+               국내부이
+              </a>
+             </li>
+             <li>
+              <a href="/weather/observation/marine_buoy_cosmos.jsp">
+               파고부이
+              </a>
+             </li>
+             <li>
+              <a href="/weather/observation/marine_beacon.jsp">
+               국내등표
+              </a>
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </li>
+         <li class="div-9 left-popup">
+          <a href="/weather/climate/average_south.jsp">
+           기후자료
+          </a>
+          <ul>
+           <li>
+            <a class="addon" href="/weather/climate/average_south.jsp">
+             국내기후자료
+            </a>
+            <ul>
+             <li>
+              <a href="/weather/climate/average_south.jsp">
+               우리나라기후
+              </a>
+             </li>
+             <li>
+              <a href="/weather/climate/climate_link_guide.jsp">
+               기후자료제공안내
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a href="/weather/climate/wind_solar_guide.jsp">
+             풍력·태양광기상자원지도 안내
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="div-9 left-popup">
+          <a href="/weather/lifenindustry/life_jisu.jsp">
+           생활과산업
+          </a>
+          <ul>
+           <li>
+            <a href="/weather/lifenindustry/life_jisu.jsp">
+             생활기상정보
+            </a>
+           </li>
+           <!--<li><a href="/weather/lifenindustry/disaster_01.jsp" class="addon">기상재해통계</a>
+
+										<ul>
+
+											<li><a href="/weather/lifenindustry/disaster_01.jsp">기상재해현황</a></li>
+
+											<li><a href="/weather/lifenindustry/disaster_03.jsp">기상재해순위</a></li>
+
+											<li><a href="/weather/lifenindustry/disaster_04.jsp">태풍피해순위</a></li>
+
+										</ul>
+
+									</li>-->
+           <li>
+            <a href="/weather/world/cityweather.jsp">
+             세계날씨
+            </a>
+           </li>
+           <li>
+            <a class="addon" href="/weather/lifenindustry/sevice_website.jsp">
+             서비스
+            </a>
+            <ul>
+             <li>
+              <a href="/weather/lifenindustry/sevice_website.jsp">
+               인터넷
+              </a>
+             </li>
+             <li>
+              <a href="/weather/lifenindustry/sevice_use.jsp" onblur="$('.menu-more-close').trigger('focus');">
+               모바일
+              </a>
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="menu-all-bg">
+    </div>
+   </div>
+   <hr/>
+   <script src="/share/js/weather.options.js?ver=20210128">
+   </script>
+   <div id="container">
+    <a id="gocontent">
+    </a>
+    <div class="snb" id="sub-menu1">
+     <h3 class="section-head">
+      <span>
+       특보·예보
+      </span>
+     </h3>
+     <ul>
+      <li id="menu1-1">
+       <a class="section-sub" href="http://www.weather.go.kr/weather/warning/status.jsp">
+        <span>
+         특보·정보
+        </span>
+       </a>
+       <ul>
+        <li id="menu1-1-1">
+         <a href="http://www.weather.go.kr/weather/warning/status.jsp" title="선택">
+          특보현황
+         </a>
+        </li>
+        <li id="menu1-1-2">
+         <a href="http://www.weather.go.kr/weather/warning/report.jsp">
+          통보문
+         </a>
+        </li>
+        <!--<li id="menu1-1-7"><a href="http://www.weather.go.kr/weather/warning/heatwave.jsp">폭염영향예보</a></li>
+
+					<li id="menu1-1-8"><a href="http://www.weather.go.kr/weather/warning/coldwave.jsp">한파영향예보</a></li>-->
+        <li class="twoline" id="menu1-1-5">
+         <a href="http://www.weather.go.kr/weather/warning/wtouchqNew.jsp">
+          인터넷기상방송
+          <br/>
+          (날씨ON)
+         </a>
+        </li>
+        <li id="menu1-1-3">
+         <a href="http://www.weather.go.kr/weather/warning/standard.jsp">
+          기상특보 발표기준
+         </a>
+        </li>
+        <li id="menu1-1-4">
+         <a href="http://www.weather.go.kr/weather/warning/safetyguide_asiandust.jsp">
+          국민행동요령
+         </a>
+        </li>
+        <!-- <li id="menu1-1-4"><a href="http://www.weather.go.kr/weather/warning/safetyguide_heat.jsp">국민행동요령</a></li>-->
+        <li id="menu1-1-6">
+         <a href="http://www.weather.go.kr/weather/warning/fog_status.jsp" title="선택">
+          안개정보서비스
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li id="menu1-2">
+       <a class="section-sub" href="http://www.weather.go.kr/weather/forecast/timeseries.jsp">
+        <span>
+         육상예보
+        </span>
+       </a>
+       <ul>
+        <li id="menu1-2-1">
+         <a class="on" href="http://www.weather.go.kr/weather/forecast/timeseries.jsp">
+          동네예보
+         </a>
+        </li>
+        <li id="menu1-2-2">
+         <a href="http://www.weather.go.kr/weather/forecast/mid-term_01.jsp">
+          중기예보(10일 예보)
+         </a>
+        </li>
+        <li id="menu1-2-3">
+         <a href="http://www.weather.go.kr/weather/forecast/weekend.jsp">
+          주말예보
+         </a>
+        </li>
+        <!--<li id="menu1-2-4"><a href="http://www.weather.go.kr/weather/forecast/long-range.jsp">장기예보</a></li>-->
+        <li id="menu1-2-6">
+         <a href="http://www.weather.go.kr/weather/forecast/long-range1.jsp">
+          1개월전망
+         </a>
+        </li>
+        <li id="menu1-2-7">
+         <a href="http://www.weather.go.kr/weather/forecast/long-range3.jsp">
+          3개월전망
+         </a>
+        </li>
+        <li id="menu1-2-8">
+         <a href="http://www.weather.go.kr/weather/forecast/long-range3-guide.jsp">
+          3개월전망해설서
+         </a>
+        </li>
+        <li id="menu1-2-5">
+         <a href="http://www.weather.go.kr/weather/forecast/season.jsp">
+          기후전망
+         </a>
+        </li>
+        <!-- <li id="menu1-2-8"><a href="http://www.weather.go.kr/weather/forecast/abnormal-week.jsp">이상기후 감시·예측</a></li> -->
+        <li id="menu1-2-9">
+         <a href="http://www.weather.go.kr/weather/forecast/drought-range1.jsp">
+          기상가뭄예보
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li id="menu1-3">
+       <a class="section-sub" href="http://www.weather.go.kr/weather/forecast/marine_daily.jsp">
+        <span>
+         해상예보
+        </span>
+       </a>
+       <ul>
+        <li id="menu1-3-1">
+         <a href="http://www.weather.go.kr/weather/forecast/marine_daily.jsp">
+          일일예보
+         </a>
+        </li>
+        <li id="menu1-3-2">
+         <a href="http://www.weather.go.kr/weather/forecast/marine_mid-term.jsp">
+          중기예보(10일 예보)
+         </a>
+        </li>
+        <!--<li id="menu1-3-3"><a href="http://www.weather.go.kr/weather/forecast/marine_longdistance.jsp">해상기상정보</a></li> -->
+       </ul>
+      </li>
+      <li id="menu1-4">
+       <a class="section-sub" href="http://www.weather.go.kr/weather/forecast/northkorea01.jsp">
+        <span>
+         북한예보
+        </span>
+       </a>
+       <ul>
+        <li id="menu1-4-1">
+         <a href="http://www.weather.go.kr/weather/forecast/northkorea01.jsp">
+          육상예보
+         </a>
+        </li>
+        <li id="menu1-4-2">
+         <a href="http://www.weather.go.kr/weather/forecast/northkorea02.jsp">
+          바다예보
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li id="menu1-5">
+       <a class="section-sub" href="http://www.weather.go.kr/weather/forecast/mountain_01.jsp">
+        <span>
+         테마예보
+        </span>
+       </a>
+       <ul>
+        <li id="menu1-5-1">
+         <a href="http://www.weather.go.kr/weather/forecast/mountain_01.jsp">
+          산악기상예보
+         </a>
+        </li>
+        <!--<li id="menu1-5-3"><a href="http://www.weather.go.kr/weather/forecast/theme_flowering01.jsp">개화·단풍정보</a></li>  -->
+        <li id="menu1-5-5">
+         <a href="http://www.weather.go.kr/weather/forecast/theme_beach.jsp?dongCode=11/28/41">
+          해수욕장 예보
+         </a>
+        </li>
+        <li id="menu1-5-4">
+         <a href="http://www.weather.go.kr/weather/forecast/theme_regional.jsp">
+          지역별기상정보
+         </a>
+        </li>
+        <li id="menu1-5-15">
+         <a href="https://www.airkorea.or.kr/web/dustForecast?pMENU_NO=113" target="_blank" title="새창에서 열림">
+          미세먼지 예보
+         </a>
+        </li>
+        <!-- <li id="menu1-5-10"><a href="http://www.kma.go.kr/weather/special/special_newyear_01.jsp" target='new' ">설연휴 특별기상지원</a></li> -->
+       </ul>
+      </li>
+      <li id="menu1-6">
+       <a class="section-sub" href="http://amo.kma.go.kr/new/html/main/main.jsp" target="_blank" title="새창에서 열림">
+        <span>
+         공항예보
+        </span>
+       </a>
+      </li>
+      <li id="menu1-8">
+       <a class="section-sub" href="http://www.weather.go.kr/weather/forecast/el-la.jsp">
+        <span>
+         엘니뇨·라니냐전망
+        </span>
+       </a>
+      </li>
+      <li id="menu1-9">
+       <a class="section-sub" href="http://www.weather.go.kr/weather/forecast/forecaetevalue_01.jsp">
+        <span>
+         예보평가
+        </span>
+       </a>
+       <ul>
+        <li id="menu1-9-1">
+         <a href="http://www.weather.go.kr/weather/forecast/forecaetevalue_01.jsp">
+          연도별
+         </a>
+        </li>
+        <li id="menu1-9-2">
+         <a href="http://www.weather.go.kr/weather/forecast/forecaetevalue_02.jsp">
+          월별
+         </a>
+        </li>
+       </ul>
+      </li>
+     </ul>
+    </div>
+    <hr>
+     <script>
+      initSubmenuByMenuId("1","2","1","","");
+     </script>
+     <div class="width2" id="wrap_content">
+      <p id="location">
+       <a href="/weather/main.jsp">
+        홈
+       </a>
+       &gt;
+       <a href="/weather/warning/status.jsp">
+        특보·예보
+       </a>
+       &gt;
+       <a href="/weather/forecast/summary.jsp">
+        육상예보
+       </a>
+       &gt;
+       <a href="/weather/forecast/summary.jsp">
+        동네예보
+       </a>
+       &gt;
+       <strong id="leaf-page-title">
+        예보요약
+       </strong>
+       <span id="location_text" style="display:none">
+        |날씨|특보·예보|육상예보|동네예보|예보요약
+       </span>
+      </p>
+      <div id="title">
+       <h4>
+        육상예보
+       </h4>
+       <h5>
+        동네예보
+       </h5>
+       <script>
+        //<!--
+
+	
+
+		function goScrap(){
+
+			var scrapForm=document.scrapForm;
+
+			if(confirm("'"+scrapForm.title1.value+"'의 '"+scrapForm.title2.value+"' 페이지를 스크랩 하시겠습니까?")==true){
+
+				var scrapUrl = scrapForm.scrapUrl.value;
+
+				if (scrapUrl.indexOf("/weather/") == 0 )
+
+				{
+
+					scrapForm.scrapUrl.value = scrapUrl.replace("/weather/","http://www.kma.go.kr/weather/");
+
+				}
+
+				return true;
+
+			}else{
+
+				return false;
+
+			}
+
+		}
+
+	
+
+	function getPrintParam() {
+
+		var $btn = $('#global-btn-print');
+
+		var paramName = $btn.attr('data-param-name');
+
+		var paramValue = $btn.attr('data-param-value');
+
+		if(paramName && paramValue) {
+
+			return "&" + paramName + "=" + paramValue;
+
+		} else {
+
+			return "";
+
+		}
+
+	}
+
+//-->
+       </script>
+       <ul class="button">
+        <li class="print">
+         <a href="/HELP/html/help_fct020.jsp" onclick="window.open(this.href,'helpwindow','width=1000px, height=703px, scrollbars=no'); return false;" target="_blank" title="새 창 열림">
+          <img alt="도움말" src="/images/common/btn_help.gif"/>
+         </a>
+        </li>
+        <li class="print">
+         <a href="/HELP/html/help_fct008.jsp" onclick="window.open(this.href,'helpwindow','width=1000px, height=703px, scrollbars=no'); return false;" target="_blank" title="새 창 열림">
+          <img alt="예보용어 보기" src="/images/common/btn_help2.gif"/>
+         </a>
+        </li>
+        <!-- 버튼추가시작 -->
+        <!-- 버튼추가끝 -->
+        <li>
+         <a href="/weather/forecast/summary.jsp?printable=true&amp;" id="global-btn-print" onclick="window.open(this.href + getPrintParam(),'helpwindow','width=933px, height=703px, scrollbars=yes, resizable=yes'); return false;" target="_blank" title="새창에서 열림">
+          <img alt="인쇄하기" src="/images/common/btn_print.gif"/>
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div id="content_weather">
+       <a id="content">
+       </a>
+       <!-- content :Start -->
+       <ul class="cmn-tab MB0" id="common_tab">
+        <li>
+         <a href="summary.jsp">
+          <span>
+           예보요약
+          </span>
+         </a>
+        </li>
+        <li>
+         <a href="timeseries.jsp">
+          <span>
+           시간별
+          </span>
+         </a>
+        </li>
+        <li>
+         <a href="digital_forecast_map.jsp">
+          <span>
+           위치별
+          </span>
+         </a>
+        </li>
+        <li>
+         <a href="distribution_map.jsp">
+          <span>
+           그래픽
+          </span>
+         </a>
+        </li>
+       </ul>
+       <script>
+        initImgEffect("common_tab",'0');
+       </script>
+       <div class="bx_summary MT10">
+        <p class="text">
+         ※ 11시에 발표하는 오늘의 기온범위 최저는 관측된 아침최저기온이며, 최고는 예보된 낮최고기온입니다.
+         <br/>
+         17시에 발표하는 오늘 최저/최고는 통보시까지 관측된 아침최저/낮최고기온 입니다.
+         <br/>
+         평년과 어제의 최저/최고기온은 일최저기온/일최고기온입니다.
+        </p>
+       </div>
+       <div class="summary_search">
+        <form action="/weather/forecast/summary.jsp" method="get" name="summary_search">
+         <fieldset>
+          <legend class="blind">
+           지역선택
+          </legend>
+          <img alt="지역선택" src="../../images/weather/forecast/img_select_area.gif"/>
+          <label class="blind" for="search_area">
+           지역선택
+          </label>
+          <select class="search_area" id="search_area" name="stnId">
+           <option selected="selected" value="108">
+            전국
+           </option>
+           <option value="109">
+            서울,인천,경기도
+           </option>
+           <option value="159">
+            부산.울산.경상남도
+           </option>
+           <option value="143">
+            대구.경상북도
+           </option>
+           <option value="156">
+            광주.전라남도
+           </option>
+           <option value="146">
+            전라북도
+           </option>
+           <option value="133">
+            대전.세종.충청남도
+           </option>
+           <option value="131">
+            충청북도
+           </option>
+           <option value="105">
+            강원도
+           </option>
+           <option value="184">
+            제주도
+           </option>
+          </select>
+          <input alt="검색" src="../../images/weather/forecast/btn_search.gif" type="image"/>
+         </fieldset>
+        </form>
+        <span class="manfc">
+         (총괄예보관:  전재목)
+        </span>
+        <p class="mid_announcementtime">
+         <i class="ann">
+          발표시각
+         </i>
+         <span>
+          2021년 03월 11일 (목)요일 11:00 발표
+         </span>
+        </p>
+       </div>
+       <table class="table_announcementtime" style="width:680px;" summary="오늘 ~ 모레 날씨 요약을 나타낸 표">
+        <caption>
+         오늘 ~ 모레 날씨 요약
+        </caption>
+        <colgroup>
+         <col/>
+        </colgroup>
+        <thead>
+         <tr>
+          <th class="top_line" scope="col">
+           오늘( 03월 11일) ~ 모레( 03월 13일)
+          </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td style="vertical-align:top">
+           <p>
+            <span class="depth_1">
+             □  (종합) 낮 동안 연무, 전국 포근, 낮과 밤 기온차 큼, 오늘 밤부터 내일 사이 전국 대부분 지방 비
+            </span>
+            <br/>
+            <span class="depth_2">
+             ○  (오늘) 전국 구름많다가 오후부터 흐려짐, 제주도 저녁부터, 전남권 밤부터 비 시작
+            </span>
+            <br/>
+            <span class="depth_2">
+             ○  (내일) 전국 대체로 흐리겠음, 새벽부터 아침 사이 경기남부와 강원영서남부, 충청권, 그 밖의 남부지방으로 비가 확대되겠고,
+             <br/>
+             오후에 경기남부와 강원영서남부, 충청권과 전라권, 밤에 경상권과 제주도 비 그침, 강원영동 오후부터 비, 서울과 그 밖의 수도권 새벽부터 낮 사이 빗방울
+            </span>
+            <br/>
+            <span class="depth_2">
+             ○  (모레) 중부지방은 대체로 흐리고, 남부지방은 가끔 구름많음, 강원영동 새벽까지 비 또는 눈
+             <br/>
+            </span>
+            <br/>
+            <span class="depth_1">
+             □  예상 강수량(11일 밤(18시)부터 12일 밤(24시) 사이)
+            </span>
+            <br/>
+            <span class="depth_2">
+             ○  제주도: 20~60mm
+            </span>
+            <br/>
+            <span class="depth_2">
+             ○  전남남해안, 경남권해안: 10~40mm
+            </span>
+            <br/>
+            <span class="depth_2">
+             ○  전라권(남해안 제외), 경남내륙, 강원영동(12일 12시~13일 06시): 5~10mm
+            </span>
+            <br/>
+            <span class="depth_2">
+             ○  경기남부, 강원영서남부, 충청권, 경북권: 5mm 미만
+            </span>
+            <br/>
+           </p>
+           <table class="table_basic_2 MT10 MB10" summary="평년, 어제, 오늘, 내일, 모레 기온 최저/최고, 파고(앞바다) 정보를 나타낸 표">
+            <caption class="blind">
+             평년, 어제, 오늘, 내일, 모레 기온 최저/최고, 파고 정보
+            </caption>
+            <colgroup>
+             <col style="width:40px"/>
+             <col>
+              <col/>
+              <col/>
+              <col/>
+              <col/>
+              <col/>
+             </col>
+            </colgroup>
+            <thead>
+             <tr>
+              <th class="top_line" colspan="2" scope="colgroup">
+               예보요소
+              </th>
+              <th class="top_line" scope="col">
+               평년(오늘)
+              </th>
+              <th class="top_line" scope="col">
+               어제(10일)
+              </th>
+              <th class="top_line" scope="col">
+               오늘(11일)
+              </th>
+              <th class="top_line" scope="col">
+               내일(12일)
+              </th>
+              <th class="top_line" scope="col">
+               모레(13일)
+              </th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+              <th rowspan="2" scope="rowgroup">
+               기온
+               <br/>
+               (℃)
+              </th>
+              <th scope="row">
+               최저
+              </th>
+              <td>
+               <p>
+                -3.1 ~ 4.4
+               </p>
+              </td>
+              <td>
+               <p>
+                -3.7 ~ 7.2
+               </p>
+              </td>
+              <td>
+               <p>
+                -2.5 ~ 7.1
+               </p>
+              </td>
+              <td>
+               <p>
+                3 ~ 10
+               </p>
+              </td>
+              <td>
+               <p>
+                0 ~ 8
+               </p>
+              </td>
+             </tr>
+             <tr>
+              <th scope="row">
+               최고
+              </th>
+              <td>
+               <p>
+                8.8 ~ 13.5
+               </p>
+              </td>
+              <td>
+               <p>
+                9.8 ~ 19.3
+               </p>
+              </td>
+              <td>
+               <p>
+                13 ~ 19
+               </p>
+              </td>
+              <td>
+               <p>
+                8 ~ 14
+               </p>
+              </td>
+              <td>
+               <p>
+                10 ~ 17
+               </p>
+              </td>
+             </tr>
+             <tr>
+              <th colspan="2" rowspan="3" scope="rowgroup">
+               파고
+               <br/>
+               (m)
+              </th>
+              <td colspan="2">
+               <p>
+                서해 앞바다/먼바다
+               </p>
+              </td>
+              <td>
+               <p>
+                0.5~1.0 / 0.5~2.0
+               </p>
+              </td>
+              <td>
+               <p>
+                0.5~2.0 / 0.5~4.0
+               </p>
+              </td>
+              <td>
+               <p>
+                0.5~1.0 / 0.5~2.5
+               </p>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="2">
+               <p>
+                남해 앞바다/먼바다
+               </p>
+              </td>
+              <td>
+               <p>
+                0.5~1.0 / 0.5~2.5
+               </p>
+              </td>
+              <td>
+               <p>
+                0.5~3.0 / 1.0~4.0
+               </p>
+              </td>
+              <td>
+               <p>
+                0.5~3.0 / 1.0~3.5
+               </p>
+              </td>
+             </tr>
+             <tr>
+              <td colspan="2">
+               <p>
+                동해 앞바다/먼바다
+               </p>
+              </td>
+              <td>
+               <p>
+                0.5~1.0 / 0.5~1.5
+               </p>
+              </td>
+              <td>
+               <p>
+                0.5~3.0 / 0.5~3.5
+               </p>
+              </td>
+              <td>
+               <p>
+                0.5~3.0 / 1.0~3.5
+               </p>
+              </td>
+             </tr>
+            </tbody>
+           </table>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+       <!--일출일몰/밀물썰물 start-->
+       <table class="table_announcementtime" summary="일출일몰과 밀물썰물정보의 외부링크 모음을 나타낸 표">
+        <caption>
+         일출일몰과 밀물썰물정보 외부링크 모음
+        </caption>
+        <colgroup>
+         <col style="width:50%"/>
+         <col style="width:50%"/>
+        </colgroup>
+        <thead>
+         <tr>
+          <th class="top_line" scope="col">
+           해달뜨고 지는 시각
+          </th>
+          <th class="top_line" scope="col">
+           밀물/썰물 정보
+          </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td style="text-align:center">
+           <p>
+            <a href="https://astro.kasi.re.kr/life/pageView/6" target="_blank" title="해달뜨고 지는 시각 정보 새창열기입니다.">
+             <img alt="KASI 천문우주지식정보-해달뜨고 지는 시각" src="/images/weather/forecast/b_sunmoon.jpg"/>
+            </a>
+           </p>
+          </td>
+          <td style="text-align:center">
+           <p>
+            <a href="http://www.khoa.go.kr/kcom/cnt/selectContentsPage.do?cntId=31101000" target="_blank" title="밀물/썰물 정보 새창열기입니다.">
+             <img alt="국립해양조사원 KHOA - 밀물/썰물 정보" src="/images/weather/forecast/b_khoa.jpg"/>
+            </a>
+           </p>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+       <!--일출일몰/밀물썰물 end-->
+       <!-- content :End -->
+       <ul id="part_weather">
+        <li>
+         <strong>
+          · 담당관리:
+         </strong>
+         본청
+        </li>
+        <li class="ML20">
+         <strong>
+          · 문의:
+         </strong>
+         <span>
+          전국 국번없이 131(기상상담전화, 유료)
+         </span>
+        </li>
+       </ul>
+       <!-- content :End -->
+      </div>
+     </div>
+     <div id="relation">
+      <h3>
+       <img alt="바로가기서비스" src="/images/weather/common/tl_quick.gif"/>
+      </h3>
+      <ul class="list" id="relation_list">
+       <li class="sty1">
+        <a href="http://www.weather.go.kr/weather/observation/currentweather.jsp">
+         <img alt="현재날씨" src="/images/weather/common/btn_quick1.gif"/>
+        </a>
+       </li>
+       <li>
+        <a href="http://www.weather.go.kr/weather/observation/past_cal.jsp">
+         <img alt="지난날씨" src="/images/weather/common/btn_quick2.gif"/>
+        </a>
+       </li>
+       <li class="sty1">
+        <a href="http://www.weather.go.kr/weather/lifenindustry/life_jisu.jsp">
+         <img alt="생활과산업" src="/images/weather/common/btn_quick9.gif"/>
+        </a>
+       </li>
+       <li>
+        <a href="http://www.weather.go.kr/mini/marine/marine_integrate.jsp">
+         <img alt="바다날씨" src="/images/weather/common/btn_quick4.gif"/>
+        </a>
+       </li>
+       <li class="sty1">
+        <a href="http://www.weather.go.kr/weather/forecast/mountain_01.jsp">
+         <img alt="산악날씨" src="/images/weather/common/btn_quick5.gif"/>
+        </a>
+       </li>
+       <li>
+        <a href="http://www.weather.go.kr/weather/earthquake_volcano/report.jsp">
+         <img alt="지진/해일" src="/images/weather/common/btn_quick6.gif"/>
+        </a>
+       </li>
+       <li class="sty1">
+        <a href="http://www.weather.go.kr/weather/forecast/weekend.jsp">
+         <img alt="주말날씨" src="/images/weather/common/btn_quick3.gif"/>
+        </a>
+       </li>
+       <li>
+        <a href="http://www.weather.go.kr/weather/world/cityweather.jsp">
+         <img alt="세계날씨" src="/images/weather/common/btn_quick8.gif"/>
+        </a>
+       </li>
+       <li class="sty1">
+        <a href="http://amo.kma.go.kr/new/html/main/main.jsp" target="_blank" title="새창으로 열립니다.">
+         <img alt="공항날씨" src="/images/weather/common/btn_quick7.gif"/>
+        </a>
+       </li>
+       <li>
+        <a href="http://www.weather.go.kr/weather/warning/wtouchOn.jsp">
+         <img alt="날씨ON" src="/images/weather/common/btn_quick10.gif"/>
+        </a>
+       </li>
+      </ul>
+      <ul class="relation_new">
+       <!--<li><a href="http://typ.kma.go.kr/" title="새창으로 열립니다" target="_blank"><img src="/images/weather/common/img_relation_banner_05.jpg" alt="국가태풍센터" /></a></li>-->
+       <li>
+        <a href="http://www.climate.go.kr" target="_blank" title="새창으로 열립니다">
+         <img alt="기후정보포털" src="/images/weather/common/img_relation_banner_06.jpg"/>
+        </a>
+       </li>
+       <li>
+        <a href="http://data.kma.go.kr" target="_blank" title="새창으로 열립니다">
+         <img alt="기상자료개방포털" src="/images/main/banner_climate_center_4.jpg"/>
+        </a>
+       </li>
+       <li>
+        <a href="http://nmsc.kma.go.kr" target="_blank" title="새창으로 열립니다">
+         <img alt="국가기상위성센터" src="/images/weather/common/img_relation_banner_07.jpg"/>
+        </a>
+       </li>
+       <!-- <li><a href="http://www.weather.go.kr/wid/eastasia/kor/weather/eastasia_weather.jsp" title="새창으로 열립니다" target="_blank"><img src="/images/weather/common/img_relation_new_1.gif" alt="한중일 날씨정보 : 동북아 날씨를 한눈에" /></a></li> -->
+       <li>
+        <a href="http://radar.kma.go.kr" target="_blank" title="새창으로 열립니다">
+         <img alt="기상레이더센터" src="/images/weather/common/img_relation_banner_08.jpg"/>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </hr>
+   </div>
+   <hr/>
+   <div class="footer-bg">
+    <div class="floor1">
+    </div>
+    <div class="floor2">
+    </div>
+   </div>
+   <div id="footer">
+    <a id="gofooter">
+    </a>
+    <div class="wrap_site_link">
+     <h3 class="blind">
+      부속사이트 안내
+     </h3>
+     <fieldset class="sitelink">
+      <legend class="blind">
+       관련사이트 링크
+      </legend>
+      <form action="/sitelink.jsp" method="get" name="sitelink1" target="_blank">
+       <label class="blind" for="sitelink1">
+        기상청소속기관 링크
+       </label>
+       <select id="sitelink1" name="link">
+        <option label="기상청소속기관" selected="selected" value="">
+         기상청소속기관
+        </option>
+        <option value="수도권기상청">
+         수도권기상청
+        </option>
+        <option value="부산지방기상청">
+         부산지방기상청
+        </option>
+        <option value="광주지방기상청">
+         광주지방기상청
+        </option>
+        <option value="강원지방기상청">
+         강원지방기상청
+        </option>
+        <option value="대전지방기상청">
+         대전지방기상청
+        </option>
+        <option value="대구지방기상청">
+         대구지방기상청
+        </option>
+        <option value="제주지방기상청">
+         제주지방기상청
+        </option>
+        <option value="전주기상지청">
+         전주기상지청
+        </option>
+        <option value="청주기상지청">
+         청주기상지청
+        </option>
+        <option value="기상기후인재개발원">
+         기상기후인재개발원
+        </option>
+        <option value="국가기상위성센터">
+         국가기상위성센터
+        </option>
+        <option value="기상레이더센터">
+         기상레이더센터
+        </option>
+        <option value="국립기상과학원">
+         국립기상과학원
+        </option>
+        <option value="항공기상청">
+         항공기상청
+        </option>
+        <!--<option value="국가태풍센터">국가태풍센터</option>-->
+        <option value="국가기상슈퍼컴퓨터센터">
+         국가기상슈퍼컴퓨터센터
+        </option>
+        <input alt="이동" src="/home/images/btn_move2.gif" title="선택한 홈페이지로 이동 새창에서 열림" type="image"/>
+       </select>
+      </form>
+      <form action="/sitelink.jsp" method="get" name="sitelink2" target="_blank">
+       <label class="blind" for="sitelink2">
+        주요행정기관 바로가기
+       </label>
+       <select id="sitelink2" name="link">
+        <option label="주요행정기관" selected="selected" value="">
+         주요행정기관
+        </option>
+        <option value="청와대">
+         청와대
+        </option>
+        <option value="국무총리실">
+         국무총리실
+        </option>
+        <option value="감사원">
+         감사원
+        </option>
+        <option value="국가정보원">
+         국가정보원
+        </option>
+        <option value="방송통신위원회">
+         방송통신위원회
+        </option>
+        <option value="국가인권위원회">
+         국가인권위원회
+        </option>
+        <option value="공정거래위원회">
+         공정거래위원회
+        </option>
+        <option value="금융위원회">
+         금융위원회
+        </option>
+        <option value="국민권익위원회">
+         국민권익위원회
+        </option>
+        <option value="국회사무처">
+         국회사무처
+        </option>
+        <option disabled="disabled" value="">
+         18부-----------------&gt;
+        </option>
+        <option value="기획재정부">
+         기획재정부
+        </option>
+        <option value="과학기술정보통신부">
+         과학기술정보통신부
+        </option>
+        <option value="교육부">
+         교육부
+        </option>
+        <option value="외교부">
+         외교부
+        </option>
+        <option value="통일부">
+         통일부
+        </option>
+        <option value="법무부">
+         법무부
+        </option>
+        <option value="국방부">
+         국방부
+        </option>
+        <option value="행정안전부">
+         행정안전부
+        </option>
+        <option value="문화체육관광부">
+         문화체육관광부
+        </option>
+        <option value="농림축산식품부">
+         농림축산식품부
+        </option>
+        <option value="산업통상자원부">
+         산업통상자원부
+        </option>
+        <option value="보건복지부">
+         보건복지부
+        </option>
+        <option value="환경부">
+         환경부
+        </option>
+        <option value="고용노동부">
+         고용노동부
+        </option>
+        <option value="여성가족부">
+         여성가족부
+        </option>
+        <option value="국토교통부">
+         국토교통부
+        </option>
+        <option value="해양수산부">
+         해양수산부
+        </option>
+        <option value="중소벤처기업부">
+         중소벤처기업부
+        </option>
+        <option disabled="disabled" value="">
+         4처------------------&gt;
+        </option>
+        <option value="인사혁신처">
+         인사혁신처
+        </option>
+        <option value="법제처">
+         법제처
+        </option>
+        <option value="국가보훈처">
+         국가보훈처
+        </option>
+        <option value="식품의약품안전처">
+         식품의약품안전처
+        </option>
+        <option disabled="disabled" value="">
+         17청-----------------&gt;
+        </option>
+        <option value="국세청">
+         국세청
+        </option>
+        <option value="관세청">
+         관세청
+        </option>
+        <option value="조달청">
+         조달청
+        </option>
+        <option value="통계청">
+         통계청
+        </option>
+        <option value="검찰청">
+         검찰청
+        </option>
+        <option value="병무청">
+         병무청
+        </option>
+        <option value="방위사업청">
+         방위사업청
+        </option>
+        <option value="소방청">
+         소방청
+        </option>
+        <option value="해양경찰청">
+         해양경찰청
+        </option>
+        <option value="경찰청">
+         경찰청
+        </option>
+        <option value="문화재청">
+         문화재청
+        </option>
+        <option value="농촌진흥청">
+         농촌진흥청
+        </option>
+        <option value="산림청">
+         산림청
+        </option>
+        <option value="특허청">
+         특허청
+        </option>
+        <option value="기상청">
+         기상청
+        </option>
+        <option value="행정중심복합도시건설청">
+         행정중심복합도시건설청
+        </option>
+        <option value="새만금개발청">
+         새만금개발청
+        </option>
+       </select>
+       <input alt="이동" src="/home/images/btn_move2.gif" title="선택한 홈페이지로 이동 새창에서 열림" type="image"/>
+      </form>
+      <form action="/sitelink.jsp" method="get" name="sitelink3" target="_blank">
+       <label class="blind" for="sitelink3">
+        방재유관기관 바로가기
+       </label>
+       <select id="sitelink3" name="link">
+        <option label="방재유관기관" selected="selected" value="">
+         방재유관기관
+        </option>
+        <option value="서울종합방재센터">
+         서울종합방재센터
+        </option>
+        <option value="국립재난안전연구원">
+         국립재난안전연구원
+        </option>
+        <option value="한강홍수통제소">
+         한강홍수통제소
+        </option>
+        <option value="중앙재난안전대책본부">
+         중앙재난안전대책본부
+        </option>
+        <option value="대기오염도실시간공개">
+         대기오염도실시간공개
+        </option>
+        <option value="국가수자원관리종합정보시스템">
+         국가수자원관리종합정보시스템
+        </option>
+       </select>
+       <input alt="이동" src="/home/images/btn_move2.gif" title="선택한 홈페이지로 이동 새창에서 열림" type="image"/>
+      </form>
+      <form action="/sitelink.jsp" method="get" name="sitelink4" target="_blank">
+       <label class="blind" for="sitelink4">
+        외국기상청 바로가기
+       </label>
+       <select id="sitelink4" name="link">
+        <option label="외국기상청" selected="selected" value="">
+         외국기상청
+        </option>
+        <option value="미국">
+         미국
+        </option>
+        <option value="일본">
+         일본
+        </option>
+        <option value="중국">
+         중국
+        </option>
+        <option value="영국">
+         영국
+        </option>
+        <option value="프랑스">
+         프랑스
+        </option>
+        <option value="세계기상기구WMO">
+         세계기상기구WMO
+        </option>
+       </select>
+       <input alt="이동" src="/home/images/btn_move2.gif" title="선택한 홈페이지로 이동 새창에서 열림" type="image"/>
+      </form>
+      <form action="/sitelink.jsp" class="last" method="get" name="sitelink5" target="_blank">
+       <label class="blind" for="sitelink5">
+        기상관련단체 바로가기
+       </label>
+       <select class="last" id="sitelink5" name="link">
+        <option label="기상관련단체" selected="selected" value="">
+         기상관련단체
+        </option>
+        <option value="한국기상산업진흥원">
+         한국기상산업기술원
+        </option>
+        <option value="APEC기후센터">
+         APEC기후센터
+        </option>
+        <option value="한국형수치예보모델개발사업단">
+         한국형수치예보모델개발사업단
+        </option>
+       </select>
+       <input alt="이동" src="/home/images/btn_move2.gif" title="선택한 홈페이지로 이동 새창에서 열림" type="image"/>
+      </form>
+     </fieldset>
+    </div>
+    <div class="footer_right link">
+     <h3 class="blind">
+      사이트 도우미
+     </h3>
+     <ul class="site_helper">
+      <li>
+       <a class="active" href="http://www.kma.go.kr/global/footer/privacy.jsp">
+        개인정보 처리방침
+       </a>
+      </li>
+      <li>
+       <a href="http://www.kma.go.kr/global/footer/siteinfo.jsp">
+        이용안내
+       </a>
+      </li>
+      <li>
+       <a href="http://www.kma.go.kr/global/footer/copyright.jsp">
+        저작권보호 및 정책
+       </a>
+      </li>
+      <li>
+       <a href="http://www.kma.go.kr/global/footer/accessibility.jsp">
+        웹접근성정책
+       </a>
+      </li>
+      <li>
+       <a href="http://www.kma.go.kr/global/footer/return.jsp">
+        홈페이지오류·건의
+       </a>
+      </li>
+      <!--<li><a href="http://www.kma.go.kr/global/footer/telephone_1.jsp">전화번호안내</a></li>-->
+      <li>
+       <a href="http://www.kma.go.kr/aboutkma/organization/chart.jsp">
+        전화번호안내
+       </a>
+      </li>
+      <li>
+       <a href="http://www.kma.go.kr/aboutkma/organization/personnel_list.jsp?schParent=1360001">
+        부서·직원찾기
+       </a>
+      </li>
+      <li>
+       <a href="http://www.kma.go.kr/global/footer/viewer.jsp">
+        뷰어다운로드
+       </a>
+      </li>
+     </ul>
+     <a class="btn01">
+      <img alt="OPEN 공공누리 공공저작물 자유이용허락 출처표시" src="/home/images/KOGL.jpg"/>
+     </a>
+    </div>
+    <div class="footer_right ml50">
+     <p class="logo">
+      <img alt="기상청" src="/images/common/footer_logo_1.gif"/>
+     </p>
+     <h3 class="blind">
+      연락처 및 저작권
+     </h3>
+     <address>
+      <p>
+       우. 07062 서울시 동작구 여의대방로16길 61 대표전화 (02)2181-0900 (평일 9:00~18:00, 야간휴일은 당직실 연결)
+      </p>
+     </address>
+     <p class="copyright">
+      본 홈페이지에 게시된 이메일 주소가 자동 수집되는 것을 거부하며, 이를 위반시 정보통신망법에 의해 처벌됨을 유념하시기 바랍니다.
+     </p>
+     <p class="copyright">
+      Copyright ⓒ 2018 KMA. All Rights RESERVED. E-mail: webmasterkma@kma.go.kr
+     </p>
+     <p class="mark_wa">
+      <a href="http://www.kma.go.kr/notify/notice/list.jsp?bid=gongzi&amp;mode=view&amp;num=1192562&amp;page=1&amp;field=&amp;text=" target="_blank" title="새창열림">
+       <img alt="과학기술통신부" src="/home/images/mark_wa.png"/>
+      </a>
+     </p>
+     <p class="call_center">
+      <a href="http://www.kma.go.kr/aboutkma/biz/service.jsp#callcenter" target="_blank" title="새창열림">
+       <img alt="기상콜센터 전국 국번없이 131" src="/home/images/footer_call131.jpg"/>
+      </a>
+     </p>
+    </div>
+   </div>
+   <script src="/share/js/warninglayer.js?ver=2018112101">
+   </script>
+   <script src="/eqk_layer/eqk.js?ver=2018112901">
+   </script>
+   <!-- START OF LOGGER TRACKING SCRIPT -->
+   <script src="/share/js/logger2.weather.go.kr.1057.js">
+   </script>
+   <noscript>
+    <img alt="로그" height="0" src="https://logger.kma.go.kr/tracker.tsp?u=7&amp;js=N" width="0"/>
+   </noscript>
+   <!-- END OF LOGGER TRACKING SCRIPT -->
+   <script src="/share/js/UserScriptConf.js" type="text/javascript">
+   </script>
+  </div>
+ </body>
+</html>
